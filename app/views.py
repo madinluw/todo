@@ -22,6 +22,8 @@ def delete(request, id):
     todo.delete()
     return HttpResponseRedirect('/')
 
+
+# Main page
 def update(request, id):
     todo = Todo.objects.get(id=id)
     if request.method == 'POST':
@@ -30,3 +32,6 @@ def update(request, id):
         todo.save()
         return HttpResponseRedirect('/')
     return render(request, 'update.html', {'todo':todo})
+
+# git add .
+# git commit -m 'added comment'
